@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Iron Torch</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="logo_title_wrapper">
+            <img id="logo" src="./assets/torch_logo.webp" alt="Iron Torch Logo" width="84" height="98">
+            <h1>Iron Torch</h1>
+        </div>
+        <h2>Shine light on your password strength.</h2>
+        <!--  Quote!  -->
+        <div id="verdict-wrapper">
+            <p id="quote">"Every man is guilty of all the good he did not do." – Voltaire</p>
+        </div>
+        <div id="func_container">
+            <div id="pass-wrapper">
+                <label for="password">Enter a string to evaluate its complexity: </label>
+                <input type="text" id="password" placeholder="Password" autocomplete="off">
+            </div>
+            <div id="checkbox_wrapper">
+                <input type="checkbox" id="checkbox"><label for="checkbox">Hide string</label>
+            </div>
+    <!--        The bars below are fillable.-->
+            <div class="strength-bars">
+                <div class="bar-container guessing-difficulty">
+                    <span class="bar-label">Guessing Difficulty</span>
+                    <div class="bar-bg"><div class="bar-fill" id="guessing-bar"></div></div>
+                </div>
+                <div class="bar-container uncommonness">
+                    <span class="bar-label">Uncommonness</span>
+                    <div class="bar-bg"><div class="bar-fill" id="uncommonness-bar"></div></div>
+                </div>
+                <div class="bar-container cracking-difficulty">
+                    <span class="bar-label">Cracking Difficulty</span>
+                    <div class="bar-bg"><div class="bar-fill" id="cracking-bar"></div></div>
+                </div>
+                <div class="bar-container overall-strength">
+                    <span class="bar-label">Overall Strength</span>
+                    <div class="bar-bg"><div class="bar-fill" id="overall-bar"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!--    Details and Summaries-->
+        <div id="details-wrapper">
+            <details class="details0">
+                <summary class="summary0">
+                <img src="./assets/question.webp" alt="Information about the Bars Functionality Icon">
+                What do the bars above indicate?
+            </summary>
+                <p>
+                    <strong>Guessing Difficulty</strong>: Measures how resistant your password is to brute-force guessing. Longer passwords generally take more time to crack, so this score improves with length. <br>
+                    <strong>Uncommonness</strong>: Evaluates how diverse your character selection is. Using a mix of uppercase, lowercase, numbers, and symbols makes it harder to predict. <br>
+                    <strong>Cracking Difficulty</strong>: Based on entropy — a measure of unpredictability. The higher the entropy, the stronger the resistance to dictionary or rainbow table attacks. <br>
+                    <strong>Overall Strength</strong>: A combined evaluation of the above, giving you a simple snapshot of your password’s real-world strength.
+                </p>
+
+            </details>
+            <details class="details1">
+                <summary class="summary1">
+				<img src="./assets/security.webp" alt="Strong Password Importance Icon">
+				Why is it important to have a strong password?
+				</summary>
+                <p>Here is what Walden University has to say:</p>
+                <blockquote class="quote1" cite="https://www.waldenu.edu/programs/information-technology/resource/cybersecurity-101-why-choosing-a-secure-password-in-so-important">
+                    They [strong passwords] protect your electronic accounts and devices from unauthorized access, keeping your sensitive personal
+                    information safe. The more complex the password, the more protected your information will be from cyber threats
+                    and hackers.</blockquote>
+                <p> read more on: <a href="https://www.waldenu.edu/programs/information-technology/resource/cybersecurity-101-why-choosing-a-secure-password-in-so-important" target="_blank">Walden University</a></p>
+            </details>
+            <details class="details2">
+                <summary class="summary2">
+                <img src="./assets/cyber_attack.webp" alt="Cyber Attack Icon">
+                Can there be password cyberattacks?
+                </summary>
+                <p>Yes, over 10 of them according to Clare Stouffer of Norton:</p>
+                <blockquote class="quote2" cite="https://us.norton.com/blog/emerging-threats/password-attack">
+                    [...]reusing the same login credentials can make you vulnerable to a password attack. These kinds of cyberattacks compromise
+                    and exploit your personal information by decoding the passwords used to keep people out. Thankfully, there are several measures
+                    you can take to build your defenses against password crackers [...] </blockquote>
+                <p> read more on: <a href="https://us.norton.com/blog/emerging-threats/password-attack" target="_blank">Norton US Blog</a> </p>
+            </details>
+            <details class="details3">
+                <summary class="summary3">
+                <img src="./assets/more_info.webp" alt="Information About the Project Icon">
+                About the project.
+            </summary>
+                <p>This project is created by <strong>DiodorEos</strong> (<a href="https://github.com/DiodorEos/" target="_blank">GitHub</a>) as a small side project, exploring
+                    the initial, shallow waters of Cybersecurity in Web Scripting technologies. It uses vanilla CSS and Javascript, as part of
+                    the creator's minimalism style of coding. Please keep in mind that the project is released and uploaded on GitHub under the
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (<a href="https://spdx.org/licenses/CC-BY-NC-SA-4.0.html">link</a>).
+                    <br>Icons by <a href="https://icons8.com/">Icons8</a>.
+                </p>
+            </details>
+        </div>
+    </div>
+
+
+<script src="app.js"></script>
+</body>
+</html>

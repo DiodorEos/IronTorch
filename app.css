@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url('./fonts/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --primary: #960018;       /* Deep Maroon – BUTTONS */
+    --primary-hover: #B02025; /* Brighter Maroon - OnHover */
+    --background: #121C2B;    /* Deep Charcoal Navy – BG */
+    --card-bg: #243545;       /* Slight lift for cards */
+    --border: #3B4D5D;        /* Softer edge, midtone */
+    --text-primary: #F0F2F5;  /* Light gray-white */
+    --text-secondary: #AEB6C1;/* Soft support text */
+    --accent-blue: #4E81AC;   /* Links, inputs, headers */
+    --accent-teal: #3AB0A2;   /* Hover effects or validation success */
+    --highlight: #e67c3a;     /* Optional flair: highlights, loaders */
+    --error: #B63232;         /* Cleaned error red */
+/*Colors for the bars*/
+    --guessdifbg: #ff7043;
+    --uncommonbg: #7e57c2;
+    --crackdifbg: #26a69a;
+    --strengthbg: #42a5f5;
+}
+
+body { background-color: var(--background); }
+
+#logo_title_wrapper {
+    display: flex;
+    align-items: center;         /* Aligns logo and text vertically */
+    width: 100%;
+    margin-left: 10%;
+}
+
+#title {
+    font-size: 4rem;
+    font-family: 'Manrope', sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+#logo {
+    height: 5.8rem;
+    width: auto;
+    transform: translateY(21px);
+}
+
+h1 {
+    font-family: 'Manrope', 'Inter', 'Open Sans', sans-serif;
+    color: var(--text-primary);
+    font-size: 4rem;
+    margin-bottom: 0;
+    transform: translateX(1rem);
+}
+
+h2 {
+    font-family: 'Manrope', 'Inter', 'Open Sans', sans-serif;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    transform: translateX(3rem) translateY(-0.8rem);
+}
+
+span, label { color: var(--text-primary); }
+/*
+ *  The quote div wrapper
+ */
+#verdict-wrapper {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.5rem;      /* adjust for visual spacing */
+    max-height: calc(1.5rem * 3);  /* = 3 lines */
+    min-height: calc(1.5rem * 3);
+    white-space: normal;
+    word-wrap: break-word;
+    width: 420px;
+}
+
+#verdict-wrapper > p { color: var(--text-secondary); }
+
+#wrapper {
+    font-family: 'Manrope', 'Inter', 'Open Sans', 'Roboto', sans-serif;
+    width: 430px;
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5% auto 0 auto;
+}
+
+#func_container {
+    font-family: 'Manrope', 'Inter', 'Open Sans', 'Roboto', sans-serif;
+    width: 420px;
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 3px var(--border);
+    border-radius: 0.66rem;
+    margin: 8% auto 0 auto;
+    background-color: var(--card-bg);
+    box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.4);
+}
+
+#pass-wrapper {
+    width: 80%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#password {
+    border: solid 3px var(--border);
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    width: 100%;
+}
+
+/*
+ * Checkbox for hiding the string
+ */
+
+#checkbox_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*
+ * The fillable bars!
+ */
+
+.strength-bars {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: 0.1rem;
+}
+
+.bar-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.bar-label {
+    font-weight: bold;
+    white-space: nowrap;
+    width: 160px;           /* fixed width ensures bars line up */
+    margin-bottom: 0;
+}
+
+.bar-bg {
+    flex: 1;
+    background-color: #e0e0e0;
+    height: 15px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Bar initial State & Bar Coloration */
+.bar-fill {
+    height: 100%;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.guessing-difficulty .bar-fill { background-color: var(--guessdifbg); }
+.uncommonness .bar-fill { background-color: var(--uncommonbg); }
+.cracking-difficulty .bar-fill { background-color: var(--crackdifbg); }
+.overall-strength .bar-fill { background-color: var(--strengthbg); }
+
+/*
+ * Details and Summaries
+ */
+#details-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+summary:hover {
+    cursor: pointer;
+    color: var(--highlight);
+}
+
+a {
+    color: var(--accent-teal);
+}
+
+details {
+    background-color: var(--background);
+    /*border: solid 2px var(--border);*/
+    border-radius: 0.9rem;
+}
+
+details > p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    margin-left: 0.8rem;
+}
+
+blockquote {
+    color: var(--text-primary);
+}
+
+summary {
+    display: block;
+    border: solid 0.2em var(--border);
+    border-radius: 0.9rem;
+    color: var(--text-primary);
+    background-color: var(--card-bg);
+    box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.5rem;
+    text-indent: 0.25rem;
+    padding: 10px 0;
+}
+
+summary > img {
+    padding-right: 0.2rem;
+    display: inline-block;
+    transform: translateY(0.2rem);
+}
