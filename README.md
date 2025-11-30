@@ -32,4 +32,4 @@ git clone https://github.com/DiodorEos/IronTorch.git
 
 ## 📚 Educational Note
 IronTorch is a demo project for secure coding and web application design.
-Passwords are never stored or transmitted. This project is intended for educational purposes only.
+Passwords are never stored or transmitted.
